@@ -3,13 +3,30 @@ const bcrypt = require("bcrypt")
 const SALT_ROUNDS = 6;
 
 const userSchema = new mongoose.Schema({
+  name: {
+    String,
+    required: true
+  },
+
+  email: {
+    type: String, 
+    required: true, 
+    lowercase: true, 
+    unique: true
+  },
+
+  googleId: String,
+    
+  userType: Number,
+
   name: {type: String, required: true},
   email: {type: String, required: true, lowercase: true, unique: true},
   googleId: String,
   userType: Number,
   password: String
+
 }, {
-  timestamps: true
+  timestamps: true,
 });
 
 userSchema.set('toJSON', {
