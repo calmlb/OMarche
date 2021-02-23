@@ -9,7 +9,7 @@ router.post('/login', usersCtrl.login);
 
 
 /*---------- Protected Routes ----------*/
-router.use(require('../../config/auth'));
+// router.use(require('../../config/auth'));
 
 
 function checkAuth(req, res, next) {

@@ -12,6 +12,10 @@ import userService from '../../utils/userService';
 
 class App extends Component {
 
+  state = {
+    user: null
+  }
+
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -33,7 +37,7 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path='/' render={() => 
-          <MainPage handleLogout={this.handleLogout}/>
+          <MainPage handleLogout={this.handleLogout} user={this.state.user}/>
           } />
           <Route exact path='/vendors' render={() => 
           <VendorsPage />

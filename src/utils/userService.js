@@ -11,12 +11,12 @@ function signup(user) {
   .then(res => {
     if (res.ok) return res.json();
     // Probably a duplicate email
-    throw new Error('Email already taken!');
+    console.log("There was an error")
+    throw new Error('Error found. Please try again.');
   })
   // Parameter destructuring!
-  .then(({token}) => token);
-  // The above could have been written as
-  //.then((token) => token.token);
+  .then(({token}) => localStorage.setItem("token", token));
+  
 }
 
 function getUser() {

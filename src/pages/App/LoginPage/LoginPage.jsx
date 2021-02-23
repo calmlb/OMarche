@@ -20,12 +20,14 @@ class LoginPage extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await userService.signup(this.state);
-      // Successfully signed up - show GamePage
+      await userService.login(this.state);
+      console.log(this.props);
+      this.props.handleSignupOrLogin();
       this.props.history.push('/');
     } catch (err) {
+      console.log('there was an error', err)
       // Invalid user data (probably duplicate email)
-      this.props.updateMessage(err.message);
+      // this.props.updateMessage(err.message);
     }
   }
 

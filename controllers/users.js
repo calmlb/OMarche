@@ -8,10 +8,13 @@ module.exports = {
 };
 
 async function signup(req, res) {
+  console.log("I'm hit")
   const user = new User(req.body);
   try {
     await user.save();
+    console.log("about to create token")
     const token = createJWT(user);
+    console.log("The tolkien is", token)
     res.json({ token });
   } catch (err) {
     // Probably a duplicate email

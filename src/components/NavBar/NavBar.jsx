@@ -15,7 +15,7 @@ const NavBar = (props) => {
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
     </div>;
-
+console.log("this is our navbar user props", props.user)
   return (
     <div className='NavBar'>
       {nav}
