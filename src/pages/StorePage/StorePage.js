@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Stores from "../../components/Stores/Stores";
+import Store from "../../components/Store/Store";
 
-function StorePage (props) {
+function StorePage () {
     return (
         <div>
-            <Stores />
+            <Store />
             <Link to='/'>HOME</Link>
             <br />
             <Link to='/vendors'>VENDORS</Link>
