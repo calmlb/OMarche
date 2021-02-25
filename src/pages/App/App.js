@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import { Route, Switch, Redirect } from 'react-router-dom';
 import * as storeApi from '../../utils/storeApi';
 import * as productApi from '../../utils/productApi'
@@ -13,6 +14,7 @@ import EditStore from '../../components/Admin/EditStore';
 import SignupPage from './SignupPage/SignupPage';
 import LoginPage from './LoginPage/LoginPage';
 import userService from '../../utils/userService';
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 const position = [51.505, -0.09]
 
@@ -112,26 +114,24 @@ class App extends Component {
             <MainPage 
               handleLogout={this.handleLogout} 
               user={this.state.user}
-            />
-          } />
+            >
             <div>
               <div style= {
                 {height: "200px"}
               }>
-                <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+                <MapContainer id="mapid" center={position} zoom={13} scrollWheelZoom={false}>
                   <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
                   <Marker position={position}>
                   <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    A pretty popup. <br />
                   </Popup>
                   </Marker>
                 </MapContainer>
                 </div>
               <header className='App-header'>
-                <div id="mapid"></div>
                  <div>{this.state.temp}&deg;</div>
                   {this.state.icon && 
                   <img
@@ -141,7 +141,9 @@ class App extends Component {
                 }
               </header>
             </div> 
-
+    </MainPage>
+  }
+/>
           <Route exact path='/vendors' render={() => 
             <VendorsPage 
               store={this.state.store}
