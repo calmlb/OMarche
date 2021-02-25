@@ -12,6 +12,7 @@ function MainPage (props) {
                 handleLogout={props.handleLogout} 
             />
             <MainP />            
+            {props.children}
             <Link to='/vendors'>VENDORS</Link>
         </div>
     )
