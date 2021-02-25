@@ -13,7 +13,6 @@ import SignupPage from './SignupPage/SignupPage';
 import LoginPage from './LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import Map from '../../components/Map/Map';
-// import tokenService from '../../utils/tokenService';
 
 class App extends Component {
 
@@ -28,27 +27,21 @@ class App extends Component {
   getCurrentLatLng() {
     console.log("function is executing")
     return new Promise(resolve => {
-      navigator.geolocation.getCurrentPosition(pos => {
-        console.log("current position is", pos)
-        resolve({
+      navigator.geolocation.getCurrentPosition(pos => resolve({
         lat: pos.coords.latitude,
         lng: pos.coords.longitude
-      })});
+      }));
     });
   }
 
   async componentDidMount() {
-    console.log('mounting component didrun')
     let {lat, lng} = await this.getCurrentLatLng()
-    console.log('the lat and lng are', lat, lng)
-
     let endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=imperial&appid=501a06495d77adca55164be4b5807bf4`;
     let fetchResult = await fetch(endpoint);
     let weatherData = await fetchResult.json();
     this.setState({
       lat,
       lng,
-      // Add temp & icon to state
       temp: Math.round(weatherData.main.temp),
       icon: weatherData.weather[0].icon
     });
@@ -72,7 +65,6 @@ class App extends Component {
     return (
       <div className="App">
         <Map lat={this.state.lat} lng={this.state.lng}/>
-        
         <Switch>
           <Route exact path='/' render={() => 
             <div>
