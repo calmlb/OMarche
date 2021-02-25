@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Admin from "../../components/Admin/Admin";
 
-function AdminPage () {
+
+function AdminPage (props) {
+    
     return (
         <div>
-            <Admin />
+            <Admin handleSignupOrLogin={props.handleSignupOrLogin} />
             <Link to='admin/createstore'>Create Store</Link>
         </div>
     )
