@@ -4,20 +4,10 @@ import { Link } from 'react-router-dom';
 
 class Admin extends Component {
 
-    async componentDidMount() {
-        this.props.handleSignupOrLogin()
-
-        await fetch('/api/store/userstore/:id', {
-            method: 'GET',
-            headers: {'content-type': 'application/json'},
-        }).then(res => res.json());
-        this.props.history.push('/admin')
-    }
-
     render() {
         return (
             <div>
-                <h1>Welcome to O Marche</h1>
+                <h1>Welcome to O Marche - My Store</h1>
 
                 <Link 
                     to={{

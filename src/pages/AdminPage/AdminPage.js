@@ -7,7 +7,10 @@ function AdminPage (props) {
     
     return (
         <div>
-            <Admin handleSignupOrLogin={props.handleSignupOrLogin} />
+            <Admin 
+                handleSignupOrLogin = {props.handleSignupOrLogin} 
+                store = {props.store} 
+            />
             <Link to='admin/createstore'>Create Store</Link>
         </div>
     )

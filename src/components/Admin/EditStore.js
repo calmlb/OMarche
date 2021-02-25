@@ -15,17 +15,16 @@ class EditStore extends Component {
 
     formRef = React.createRef();
 
-    // *** this code is to be changed as well ***
     handleSubmit = async (evt) => {
         evt.preventDefault();
+        this.props.handleUpdateStore(this.state)
 
-        await fetch('/api/store/:id', {
-            method: 'PUT',
-            headers: {'content-type': 'application/json'},
-            body: JSON.stringify(this.state)
-        }).then(res => res.json());
-        this.props.history.push('/admin')
-
+        // await fetch('/api/store/:id', {
+        //     method: 'PUT',
+        //     headers: {'content-type': 'application/json'},
+        //     body: JSON.stringify(this.state)
+        // }).then(res => res.json());
+        // this.props.history.push('/admin')
     };
 
     handleChange = (e) => {
@@ -38,7 +37,7 @@ class EditStore extends Component {
 
                 <h2>Edit Store</h2>
 
-                <form ref={this.formRef} onSubmit={this.handleSubmit} >
+                <form ref={this.formRef} onSubmit={this.props.handleUpdateStore} >
                     <div className="form-group">
                         <label>Name: </label>
                         <input 
@@ -84,7 +83,7 @@ class EditStore extends Component {
                         className="btn"
                         disabled={this.state.formInvalid}
                     >
-                        Submit
+                        Save
                     </button>
                     <br />
                     <Link to='/admin'>CANCEL</Link>

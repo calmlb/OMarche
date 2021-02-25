@@ -45,7 +45,12 @@ const storeSchema = new Schema ({
         default: 5
     }, 
 
-    product: [productSchema]
+    product: [productSchema],
+
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 
 }, {
     timestamps: true

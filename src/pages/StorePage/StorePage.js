@@ -4,14 +4,11 @@ import Store from "../../components/Store/Store";
 
 
 function StorePage (props) {
-    // const store = props.state.store;
+    // const store = props.state;
     return (
         <div>
-            <h1>Store Details</h1>
             <Store 
-                // key={store._id}
                 // store={store}
-                // name={name}
             />
             <Link to='/'>HOME</Link>
             <br />

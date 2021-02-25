@@ -13,11 +13,13 @@ app.use(express.json());
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.use('/api/product', require('./routes/api/product'));
-app.use('/api/store', require('./routes/api/store'));
+
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api', require('./routes/api/api'))
 app.use(require('./config/auth'));
+app.use('/api/store', require('./routes/api/store'));
+app.use('/api/product', require('./routes/api/product'));
+app.use('/api', require('./routes/api/api'))
+
 
 //Catchall Route
 app.get('/*', function(req, res) {

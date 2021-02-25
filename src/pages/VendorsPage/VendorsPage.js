@@ -7,7 +7,7 @@ function VendorsPage (props) {
     return (
         <>
             <h1>Vendors</h1>
-            <div>
+            <div >
                 {props.store.map(store =>
                     <Vendors store={store} />
                 )}

@@ -26,6 +26,9 @@ async function showStore(req, res) {
 
 async function createStore(req, res) {
     const store = await Store.create(req.body);
+    console.log(req.user)
+    store.user = req.user._id;
+    await store.save();
     res.status(200).json(store);
 }
 
