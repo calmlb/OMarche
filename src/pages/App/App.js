@@ -13,13 +13,14 @@ import EditStore from '../../components/Admin/EditStore';
 import SignupPage from './SignupPage/SignupPage';
 import LoginPage from './LoginPage/LoginPage';
 import userService from '../../utils/userService';
-// import tokenService from '../../utils/tokenService';
+import Map from '../../components/Map/Map';
 
 
 class App extends Component {
 
   state = {
     user: null,
+    crud_part1
     store: [],
     product: []
   };
@@ -49,6 +50,34 @@ class App extends Component {
     this.setState(state => ({
       store: state.store.filter(p => p._id !== id)
     }), () => this.props.history.push('/admin'));
+    lat: null,
+    lng: null,
+    temp: null,
+    icon: ''
+  };
+
+  getCurrentLatLng() {
+    console.log("function is executing")
+    return new Promise(resolve => {
+      navigator.geolocation.getCurrentPosition(pos => resolve({
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude
+      }));
+    });
+  }
+
+  async componentDidMount() {
+    let {lat, lng} = await this.getCurrentLatLng()
+    let endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=imperial&appid=501a06495d77adca55164be4b5807bf4`;
+    let fetchResult = await fetch(endpoint);
+    let weatherData = await fetchResult.json();
+    this.setState({
+      lat,
+      lng,
+      temp: Math.round(weatherData.main.temp),
+      icon: weatherData.weather[0].icon
+    });
+    console.log(Math.round(weatherData.main.temp));
   }
 
   handleLogout = () => {
@@ -63,6 +92,7 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
   }
+  crud_part1
 
   // *** PRODUCT HANDLERS ****
 
@@ -73,14 +103,11 @@ class App extends Component {
     console.log(store)
     this.setState({store});
   }
-
   
   render() {
     return (
       <div className="App">
-        <header className="App-header-footer">
-          O Marche
-        </header>
+        <Map lat={this.state.lat} lng={this.state.lng}/>
         <Switch>
           <Route exact path='/' render={() => 
             <MainPage 
@@ -88,6 +115,20 @@ class App extends Component {
               user={this.state.user}
             />
           } />
+            <div>
+              <MainPage handleLogout={this.handleLogout} user={this.state.user}/>
+              <header className='App-header'>
+                <div>{this.state.temp}&deg;</div>
+                {this.state.icon && 
+                <img
+                    src={`https://openweathermap.org/img/w/${this.state.icon}.png`}
+                    alt='Current Conditions'
+                />
+                }
+              </header>
+            </div>
+        }/> 
+
           <Route exact path='/vendors' render={() => 
             <VendorsPage 
               store={this.state.store}
@@ -130,6 +171,7 @@ class App extends Component {
           } />
           :
           <Redirect to='/login'/>
+        
         </Switch>
       </div>
     );

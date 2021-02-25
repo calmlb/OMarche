@@ -1,0 +1,14 @@
+.Map {
+  height: 100%;
+}
+justify-content: space-between;
+
+.App-header div {
+  color: white;
+  font-size: 8vmin;
+  font-weight: bold;
+}
+
+.App-header img {
+  height: 15vmin;
+}
