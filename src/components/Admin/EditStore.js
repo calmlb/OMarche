@@ -1,99 +1,48 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
+function EditStore () {
 
-class EditStore extends Component {
+    const [store, setStore] = useState();
 
-    state = {
-        name: '',
-        address: '',
-        description: '',
-        image: '',
-        
-        formInvalid: false
-    };
+    const {register, handleSubmit} = useForm({});
 
-    formRef = React.createRef();
+    const history = useHistory();
 
-    // *** this code is to be changed as well ***
-    handleSubmit = async (evt) => {
-        evt.preventDefault();
+    const onSubmit = handleSubmit((data) => {
+        alert(JSON.stringify(data));
+        history.push('/admin')
+    });
 
-        await fetch('/api/store/:id', {
-            method: 'PUT',
-            headers: {'content-type': 'application/json'},
-            body: JSON.stringify(this.state)
-        }).then(res => res.json());
-        this.props.history.push('/admin')
-
-    };
-
-    handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value})
-    };
-
-    render() {
-        return (
-            <div className="container"> 
-
-                <h2>Edit Store</h2>
-
-                <form ref={this.formRef} onSubmit={this.handleSubmit} >
+    return (
+        <div className="container"> 
+            <div className="mt-3">
+                <h3>Edit Store</h3>
+                <form onSubmit={onSubmit}>
                     <div className="form-group">
-                        <label>Name: </label>
-                        <input 
-                            className='form-control'  
-                            name="name" 
-                            onChange={this.handleChange}
-                            value={this.state.name}
-                            required
-                        />
+                        <label>Name: 
+                        <input ref={register} type="text" name="name" />
+                        </label>
+                        <br />
+                        <label>Address: 
+                        <input ref={register} type="text" name="address" />
+                        </label>
+                        <br />
+                        <label>Description: 
+                        <input ref={register} type="text" name="description" />
+                        </label>
+                        <br />
+                        <label>Add Image Url: </label>
+                        <input ref={register} type="text" name="image" />
+                        <br />
+                        <button type="submit" className="btn btn-primary">Save</button>
                     </div>
-                    <div className='form-group'>
-                        <label>Address: </label>
-                        <input 
-                            className='form-control' 
-                            name="address" 
-                            onChange={this.handleChange}
-                            value={this.state.address}
-                            required
-                        />
-                    </div>
-                    <div className='form-group'>
-                        <label>Description: </label>
-                        <input 
-                            className='form-control' 
-                            name="description" 
-                            onChange={this.handleChange}
-                            value={this.state.description}
-                        />
-                    </div> 
-                    <div className='form-group'>
-                        <label>Add an Image url: </label>
-                        <input 
-                            className='form-control' 
-                            name="image" 
-                            onChange={this.handleChange}
-                            value={this.state.image}
-                        />
-                    </div> 
-                    
-                    <button
-                        onClick={this.handleSubmit} 
-                        type="submit" 
-                        className="btn"
-                        disabled={this.state.formInvalid}
-                    >
-                        Submit
-                    </button>
-                    <br />
-                    <Link to='/admin'>CANCEL</Link>
-                    
                 </form>
-    
             </div>
-        );
-    }
+
+        </div>
+    );
 }
 
 export default EditStore;

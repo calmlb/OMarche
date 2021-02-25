@@ -6,7 +6,7 @@ function ProductPage (props) {
     return (
         <div>
             <Product />
-            <Link to='/admin'>HOME</Link>
+            <Link to='/'>HOME</Link>
         </div>
     )
 }

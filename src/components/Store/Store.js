@@ -4,7 +4,7 @@ function Store (props) {
     return (
         <div>
             <h1>Store Page</h1>
-            <h3>Store1</h3>
+            <h3>{props.name}</h3>
         </div>
     );
 }
