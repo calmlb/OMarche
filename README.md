@@ -15,7 +15,7 @@ Find O-Marche here: https://o-marche.herokuapp.com/
 
 Users can provide their location on navigating to the site. They will be offered a map indicating their location along with 3 recommendations for farmers markets in their vicinity as provided by a geo-location API. The farmers with whom they will connect can create their store, showcase their products and make sales on the site. 
 
-#### 1. User can create an account, log in and log of the website: 
+#### 1. User can create an account, log in and log out of the website: 
 <img src="https://i.imgur.com/NlRInx9.png">
 <img src="https://i.imgur.com/YdLgK5d.png">
 
