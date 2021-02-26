@@ -6,14 +6,18 @@ import NavBar from "../../components/NavBar/NavBar";
 
 function MainPage (props) {
     return (
-        <div>
+        <div className='Main-page'>
             <NavBar 
                 user={props.user}
                 handleLogout={props.handleLogout} 
             />
-            <MainP />            
+
+            <MainP /> 
+            
+            <Link to='/vendors'>List of Vendors</Link>
+            <br />
+            <br />       
             {props.children}
-            <Link to='/vendors'>VENDORS</Link>
         </div>
     )
 }

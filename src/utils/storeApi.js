@@ -1,6 +1,6 @@
 import tokenService from '../utils/tokenService'
-
 const BASE_URL = '/api/store';
+
 
 export function getStores() {
     return fetch(BASE_URL)

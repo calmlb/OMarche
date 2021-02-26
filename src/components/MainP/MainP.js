@@ -3,7 +3,7 @@ import React from 'react';
 function MainP () {
     return (
         <div>
-            <h1>Main Page</h1>
+            <h3>Welcome to O Marche</h3>
         </div>
     );
 }
