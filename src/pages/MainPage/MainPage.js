@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import MainP from "../../components/MainP/MainP";
 import NavBar from "../../components/NavBar/NavBar";
 
-
 function MainPage (props) {
     return (
         <div>
@@ -12,6 +11,7 @@ function MainPage (props) {
                 handleLogout={props.handleLogout} 
             />
             <MainP />            
+            {props.children}
             <Link to='/vendors'>VENDORS</Link>
         </div>
     )
