@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/HVvUoqu.png">
+<img src="https://i.imgur.com/RJ8llW5.png">
 
 # Project 4: O-Marche
 #### Development Team: Amadou Tall, Eric Mathias
@@ -16,24 +16,19 @@ Find O-Marche here: https://o-marche.herokuapp.com/
 Users can provide their location on navigating to the site. They will be offered a map indicating their location along with 3 recommendations for farmers markets in their vicinity as provided by a geo-location API. The farmers with whom they will connect can create their store, showcase their products and make sales on the site. 
 
 #### 1. User can create an account, log in and log of the website: 
-<img src="https://i.imgur.com/akR1C74.png">
-<img src="https://i.imgur.com/oTqzvTj.png">
+<img src="https://i.imgur.com/NlRInx9.png">
+<img src="https://i.imgur.com/YdLgK5d.png">
 
 ---
 
 #### 2. Farmer can upload, update and delete their products:
-<img src="https://i.imgur.com/8H6cA25.png">
-<img src="https://i.imgur.com/5edLOUp.png">
+<img src="https://i.imgur.com/MAWju68.png">
+<img src="https://i.imgur.com/lQF7oo2.png">
 
 ---
 
 #### 3. All vendors can be viewed: 
-<img src="https://i.imgur.com/lkutURc.png">
-
----
-
-#### 5. The application can be used on mobile devices:
-<img src="https://i.imgur.com/s8sI1CI.png">
+<img src="https://i.imgur.com/9kfxZ0E.png">
 
 ---
 
