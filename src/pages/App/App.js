@@ -32,6 +32,8 @@ class App extends Component {
   };
 
   // *** STORE HANDLERS ***
+
+  
   handleAddStore = async newStoreData => {
     const newStore = await storeApi.createStore(newStoreData);
     this.setState(state => ({
