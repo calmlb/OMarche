@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import * as storeApi from '../../utils/storeApi';
-// import * as productApi from '../../utils/productApi'
+import * as productApi from '../../utils/productApi'
 import MainPage from '../../pages/MainPage/MainPage';
 import VendorsPage from '../../pages/VendorsPage/VendorsPage';
 import StorePage from '../../pages/StorePage/StorePage';
@@ -118,16 +119,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <Switch>
-
           <Route exact path='/' render={() => 
             <MainPage 
               handleLogout={this.handleLogout} 
               user={this.state.user}
             >
             <div>
-              <div style= {{height: "200px"}}>
+              <div style= {
+                {height: "200px"}
+              }>
                 <MapContainer id="mapid" center={position} zoom={13} scrollWheelZoom={false}>
                   <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -139,7 +140,7 @@ class App extends Component {
                   </Popup>
                   </Marker>
                 </MapContainer>
-              </div>
+                </div>
               <header className='App-header'>
                  <div>{this.state.temp}&deg;</div>
                   {this.state.icon && 
@@ -151,47 +152,43 @@ class App extends Component {
               </header>
             </div> 
             </MainPage>
-          }/>
-
+            }
+          />
           <Route exact path='/vendors' render={() => 
-            <VendorsPage store={this.state.store}/>
+            <VendorsPage 
+              store={this.state.store}
+            />
           } />
-
           <Route exact path='/store' render={() => 
-            <StorePage />
+            <StorePage  
+            />
           } />
-
           <Route exact path='/product' render={() => 
             <ProductPage />
           } />
-
           <Route exact path='/admin' render={() => 
             <AdminPage 
               handleSignupOrLogin={this.handleSignupOrLogin}
               store={this.state.store}
             />
           } />
-
           <Route exact path='/admin/createstore' render={({history}) => 
             <CreateStore 
               history={history}
               handleAddStore={this.handleAddStore}
             />
           } />
-
           <Route exact path='/editstore' render={() => 
             <EditStore 
               handleUpdateStore={this.handleUpdateStore}
             />
           } />
-
           <Route exact path ='/signup' render={({history}) =>
             <SignupPage 
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           } />
-
           <Route exact path='/login' render={({ history }) => 
             <LoginPage
               history={history}
@@ -200,7 +197,6 @@ class App extends Component {
           } />
           :
           <Redirect to='/login'/>
-          
         </Switch>
       </div>
     );
