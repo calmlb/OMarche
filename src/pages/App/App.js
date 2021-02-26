@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import * as storeApi from '../../utils/storeApi';
-import * as productApi from '../../utils/productApi'
+// import * as productApi from '../../utils/productApi'
 import MainPage from '../../pages/MainPage/MainPage';
 import VendorsPage from '../../pages/VendorsPage/VendorsPage';
 import StorePage from '../../pages/StorePage/StorePage';
