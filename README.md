@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+<img src="https://i.imgur.com/HVvUoqu.png">
+
+# Project 4: O-Marche
+#### Development Team: Amadou Tall, Eric Mathias
+
+---
+#### **Introduction:**
+
+O-Marche is a web application designed to support farmers in connecting with their communities. Users can find local farmers markets and purchase local produce. The app provides farmers with the ability to create a store to showcase their products and provides communities with geo-location-based recommendations for local farmers markets. As the landscape of food growth and distribution is changing, users may need greater support in finding the food they wish to have! 
+
+Find O-Marche here: https://o-marche.herokuapp.com/
+
+---
+#### **Functionalities of the Application:**
+
+Users can provide their location on navigating to the site. They will be offered a map indicating their location along with 3 recommendations for farmers markets in their vicinity as provided by a geo-location API. The farmers with whom they will connect can create their store, showcase their products and make sales on the site. 
+
+#### 1. User can create an account, log in and log of the website: 
+<img src="https://i.imgur.com/akR1C74.png">
+<img src="https://i.imgur.com/oTqzvTj.png">
+
+---
+
+#### 2. Farmer can upload, update and delete their products:
+<img src="https://i.imgur.com/8H6cA25.png">
+<img src="https://i.imgur.com/5edLOUp.png">
+
+---
+
+#### 3. All vendors can be viewed: 
+<img src="https://i.imgur.com/lkutURc.png">
+
+---
+
+#### 5. The application can be used on mobile devices:
+<img src="https://i.imgur.com/s8sI1CI.png">
+
+---
+
+#### **Technologies used for this Application:**
+
+* MongoDb
+* Express 
+* React
+* Node.js  
+* Github 
+* Heroku 
+* Leaflet 
+* OpenWeather API
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was written in VS Code. 
