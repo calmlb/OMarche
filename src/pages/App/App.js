@@ -18,6 +18,7 @@ import userService from '../../utils/userService';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 const position = [51.505, -0.09]
 
+
 class App extends Component {
 
   state = {
@@ -126,7 +127,7 @@ class App extends Component {
                   />
                   <Marker position={position}>
                   <Popup>
-                    A pretty popup. <br />
+                    Here you are! <br />
                   </Popup>
                   </Marker>
                 </MapContainer>
