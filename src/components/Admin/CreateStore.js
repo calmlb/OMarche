@@ -16,15 +16,9 @@ class CreateStore extends Component {
     formRef = React.createRef();
 
     // *** this code below is to be changed ***
-    handleSubmit = async (evt) => {
+    handleSubmit = (evt) => {
         evt.preventDefault();
-
-        await fetch('/api/store', {
-            method: 'POST',
-            headers: {'content-type': 'application/json'},
-            body: JSON.stringify(this.state)
-        }).then(res => res.json());
-        this.props.history.push('/admin')
+        this.props.handleAddStore(this.state)
     };
 
     handleChange = (e) => {
