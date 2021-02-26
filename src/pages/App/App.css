@@ -3,7 +3,7 @@
   justify-content: space-between;
 }
 
-/* .App-logo {
+.App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -12,9 +12,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-} */
+}
 
-/* .App-header {
+.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -23,16 +23,16 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-} */
+}
 
 .App-header div {
-  color: black;
-  font-size: 5vmin;
+  color: white;
+  font-size: 8vmin;
   font-weight: bold;
 }
 
 .App-header img {
-  height: 10vmin;
+  height: 15vmin;
 }
 
 .App-link {
